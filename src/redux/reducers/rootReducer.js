@@ -1,6 +1,7 @@
 import {persistCombineReducers} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import reducer1 from './items/reducer1';
+import todos from './items/todos';
+import visibilityFilters from './items/visibilityFilters';
 
 const persistConfig = {
     key: 'root',
@@ -8,7 +9,8 @@ const persistConfig = {
 }
 
 const rootReducer = persistCombineReducers(persistConfig, {
-    reducer1
+    todos,
+    visibilityFilters
 })
 
 export default rootReducer;
